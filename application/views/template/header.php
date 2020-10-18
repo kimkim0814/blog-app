@@ -1,19 +1,17 @@
 <html>
 <head>
-    <title></title>
+    <title>BLOG-APP</title>
     <link rel="stylesheet" href="<?= base_url() ?>css/uikit.min.css" type= "text/css">
 </head>
 <body>
+    <div class = "header">
+        <h1 class="uk-heading-divider">初めてのブログサイト</h1>
+        <a href="" uk-icon="heart"></a>
 
-<div class="uk-grid">
-    <div class="uk-width-1-3">.uk-width-1-3</div>
-    <div class="uk-width-1-3">.uk-width-1-3</div>
-    <div class="uk-width-1-3">.uk-width-1-3</div>
-</div>
+    </div>
 
-
-
+    
+    <script src="<?= base_url() ?>js/uikit-icons.min.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/uikit.min.js"></script>
 </body>
 </html>
