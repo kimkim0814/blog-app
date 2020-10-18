@@ -3,7 +3,9 @@
 class Post extends CI_Controller {
 
   public function __construct(){
-    $this->load->helper("url_helper");
+    parent::__construct();
+    //ヘルパー
+    $this->load->helper('url');
 
   }
   public function index() {
