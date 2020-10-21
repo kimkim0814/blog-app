@@ -1,6 +1,5 @@
 <?php
-
-class News_model extends CI_Model {
+class Post_model extends CI_Model {
 
         public function __construct()
         {
@@ -10,13 +9,12 @@ class News_model extends CI_Model {
         {
                 if($slug === FALSE)
                 {
-                        $query = $this->db->get('news');
+                        $query = $this->db->get('post');
                         return $query->result_array();
                 }
-                $query = $this->db->get_where('news', array('slug' => $slug));
+                $query = $this->db->get_where('post', array('slug' => $slug));
                 return $query->row_array();
         }
 
 }
 ?>
-
