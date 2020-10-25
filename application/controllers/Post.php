@@ -15,10 +15,10 @@ class Post extends CI_Controller {
   }
   public function index() {
     $this->load->view('template/header');
-    $data['post'] = $this->post_model->get_news();
+    $data['post'] = $this->post_model->get_post();
   }
   public function view(){
-    $data['post_item'] = $this->post_model->get_news($slug);
+    $data['post_item'] = $this->post_model->get_post($slug);
 }
 }
 ?>
