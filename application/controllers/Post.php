@@ -20,5 +20,8 @@ class Post extends CI_Controller {
   public function view(){
     $data['post_item'] = $this->post_model->get_post($slug);
 }
+  public function create(){
+    
+  }
 }
 ?>
