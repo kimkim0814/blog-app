@@ -21,7 +21,18 @@ class Post extends CI_Controller {
     $data['post_item'] = $this->post_model->get_post($slug);
 }
   public function create(){
-    
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('text', 'Text', 'required');
+
+    if($this->form_validation->run() === FALSE ){
+      $this->load->view('template/header');
+    }else{
+      $this->load->view('template/header');
+      $this->post_model->set_model();
+    }
   }
 }
 ?>
