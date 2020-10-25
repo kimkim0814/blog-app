@@ -30,8 +30,8 @@ class Post extends CI_Controller {
     if($this->form_validation->run() === FALSE ){
       $this->load->view('template/header');
     }else{
-      $this->load->view('template/header');
-      $this->post_model->set_model();
+      $this->post_model->set_post();
+      echo '<script type="text/javascript">alert("投稿が完了しました");</script>';
     }
   }
 }

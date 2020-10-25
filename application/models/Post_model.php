@@ -15,6 +15,9 @@ class Post_model extends CI_Model {
                 $query = $this->db->get_where('post', array('slug' => $slug));
                 return $query->row_array();
         }
+        public function set_post(){
+                
+        }
 
 }
 ?>
