@@ -1,6 +1,6 @@
 <?php
 
-class Post extends CI_Controller {
+class Blog extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
@@ -10,16 +10,19 @@ class Post extends CI_Controller {
     //ライブラリー
     $this->load->library('form_validation');
     //モデル
-    $this->load->model('post_model');
+    $this->load->model('blog_model');
 
   }
   public function index() {
     $this->load->view('template/header');
-    $data['post'] = $this->post_model->get_post();
+    $data['blog'] = $this->blog_model->get_blog();
   }
+
   public function view(){
-    $data['post_item'] = $this->post_model->get_post($slug);
+    $data['blog_item'] = $this->blog_model->get_blog($slug);
 }
+
+
   public function create(){
     $this->load->helper('form');
     $this->load->library('form_validation');
@@ -29,8 +32,9 @@ class Post extends CI_Controller {
 
     if($this->form_validation->run() === FALSE ){
       $this->load->view('template/header');
+      $this->load->view('blog/create');
     }else{
-      $this->post_model->set_post();
+      $this->blog_model->set_blog();
       echo '<script type="text/javascript">alert("投稿が完了しました");</script>';
     }
   }
