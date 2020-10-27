@@ -5,23 +5,21 @@ class Blog_model extends CI_Model {
         {
                 $this->load->database();
         }
-        public function get_blog($slug = FALSE)
+        public function get_blog($id = FALSE)
         {
-                if($slug === FALSE)
+                if($id === FALSE)
                 {
                         $query = $this->db->get('blog');
                         return $query->result_array();
                 }
-                $query = $this->db->get_where('blog', array('slug' => $slug));
+                $query = $this->db->get_where('blog', array('id' => $id));
                 return $query->row_array();
         }
         public function set_blog(){
                 $this->load->helper('url');
 
-
-
                 $data= array(
-                        // 'hoge' => isset($_POST['something']) これと同じ意味
+                        // 'hoge' => isset($_POST['something']) これと同じ意味?
                         'title' => $this->input->post('title'),
                         'description' => $this->input->post('description')
 

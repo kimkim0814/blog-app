@@ -14,12 +14,16 @@ class Blog extends CI_Controller {
 
   }
   public function index() {
-    $this->load->view('template/header');
+   
     $data['blog'] = $this->blog_model->get_blog();
+    $this->load->view('template/header');
+    $this->load->view('blog/index',$data);
   }
 
-  public function view(){
-    $data['blog_item'] = $this->blog_model->get_blog($slug);
+  public function view($id = NULL){
+    $data['blog_item'] = $this->blog_model->get_blog($id);
+    $this->load->view('template/header');
+    $this->load->view('blog/view',$data);
 }
 
 
