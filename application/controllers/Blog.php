@@ -28,7 +28,7 @@ class Blog extends CI_Controller {
     $this->load->library('form_validation');
 
     $this->form_validation->set_rules('title', 'Title', 'required');
-    $this->form_validation->set_rules('text', 'Text', 'required');
+    $this->form_validation->set_rules('description', 'description', 'required');
 
     if($this->form_validation->run() === FALSE ){
       $this->load->view('template/header');

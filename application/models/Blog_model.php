@@ -18,12 +18,12 @@ class Blog_model extends CI_Model {
         public function set_blog(){
                 $this->load->helper('url');
 
-                $slug = url_title($this->input->blog('title'), 'dash', TRUE);
+
 
                 $data= array(
-                        'title' => $this->input->blog('title'),
-                        'slug' => $slug,
-                        'text' => $this->input->insert('news',$data)
+                        // 'hoge' => isset($_POST['something']) これと同じ意味
+                        'title' => $this->input->post('title'),
+                        'description' => $this->input->post('description')
 
                 );
                 return $this->db->insert('blog',$data);

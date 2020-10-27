@@ -1,15 +1,15 @@
-<h2><?php echo $title; ?></h2>
+
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('post/create'); ?>
+<?php echo form_open('blog/create'); ?>
 
     <label for="title">Title</label>
     <input type="input" name="title" /><br />
 
-    <label for="text">Text</label>
-    <textarea name="text"></textarea><br />
+    <label for="text">詳細</label>
+    <textarea name="description"></textarea><br />
 
-    <input type="submit" name="submit" value="Create post item" />
+    <input type="submit" name="submit" value="Create blog item" />
 
 </form>
