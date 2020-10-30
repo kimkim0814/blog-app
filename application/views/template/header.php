@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>css/blog.css" type= "text/css">
 </head>
 <body>
-
-        <h1 class="uk-heading-divider">初めてのブログサイト</h1>
-
+        <div>
+        <h1 class="uk-heading-divider" ><a href= "<?=base_url();?>" style = "text-decoration: none; color:black;">初めてのブログサイト</a></h1>
+</div>
    
 
     <script src="<?= base_url() ?>js/uikit.min.js"></script>

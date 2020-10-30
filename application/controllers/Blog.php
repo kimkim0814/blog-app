@@ -40,6 +40,8 @@ class Blog extends CI_Controller {
     }else{
       $this->blog_model->set_blog();
       echo '<script type="text/javascript">alert("投稿が完了しました");</script>';
+      echo '<script>location.href= "/blog-app"; </script>';
+
     }
   }
 }
