@@ -1,5 +1,5 @@
 <?php foreach ($blog as $blog_item): ?>
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m" style="margin-bottom:10px; ">
+<div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light" style="margin-bottom:10px; width:400px; ">
         <h3><?php echo $blog_item['title']; ?></h3>
         <div class="main">
                 <?php echo $blog_item['description']; ?>
