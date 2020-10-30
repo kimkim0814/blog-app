@@ -5,6 +5,7 @@ class Blog_model extends CI_Model {
         {
                 $this->load->database();
         }
+        //blogデータの取得
         public function get_blog($id = FALSE)
         {
                 if($id === FALSE)
@@ -15,6 +16,7 @@ class Blog_model extends CI_Model {
                 $query = $this->db->get_where('blog', array('id' => $id));
                 return $query->row_array();
         }
+
         public function set_blog(){
                 $this->load->helper('url');
 

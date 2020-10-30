@@ -34,7 +34,7 @@ class Migration_create_blog extends CI_Migration
                 'constraint' => 5,
                 'unsigned' => true
             ],
-            'createed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
+            'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
             'modified_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP'
         ]);
         

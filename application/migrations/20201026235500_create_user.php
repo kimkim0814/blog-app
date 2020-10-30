@@ -34,7 +34,7 @@ class Migration_create_user extends CI_Migration
                 'constraint' => 100
             ],
             
-            'createed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
+            'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
 
         ]);
         
