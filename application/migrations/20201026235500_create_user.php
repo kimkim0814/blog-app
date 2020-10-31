@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /**
 * blogテーブルの追加
 */
-class Migration_create_blog extends CI_Migration
+class Migration_create_user extends CI_Migration
 {
     /**
     * テーブルの作成
@@ -21,25 +21,25 @@ class Migration_create_blog extends CI_Migration
                 'unsigned' => true,
                 'auto_increment' => true
             ],
-            'title' => [
+            'name' => [
                 'type' => 'VARCHAR',
+                'constraint' => 20
+            ],
+            'email' => [
+                'type' => 'TEXT',
                 'constraint' => 100
             ],
-            'description' => [
+            'password' => [
                 'type' => 'TEXT',
-                'null' => true
+                'constraint' => 100
             ],
-            'author_user_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true
-            ],
+            
             'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
-            'modified_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP'
+
         ]);
         
         $this->dbforge->add_key('id', true);
-        $this->dbforge->create_table('blog');
+        $this->dbforge->create_table('user');
     }
       
     /**
@@ -49,6 +49,6 @@ class Migration_create_blog extends CI_Migration
     */
     public function down()
     {
-        $this->dbforge->drop_table('blog');
+        $this->dbforge->drop_table('user');
     }
 }
