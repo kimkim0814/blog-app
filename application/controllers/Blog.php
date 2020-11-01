@@ -13,6 +13,7 @@ class Blog extends CI_Controller
         //モデル
         $this->load->model('blog_model');
     }
+
     public function index()
     {
         $data['blog'] = $this->blog_model->get_blog();
