@@ -24,7 +24,9 @@ class Login extends CI_Controller {
     if($this->form_validation->run()){
       redirect("blog/index");
     }else{
-      $this->load->view("login");
+      echo "<script>alert('正しいメールアドレスとパスワードを入力してください')</script>";
+      $this->load->view('template/header');
+      $this->load->view("login/index");
     }
   }
 

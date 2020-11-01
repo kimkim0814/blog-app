@@ -1,4 +1,4 @@
-<form action = "login/validation">
+<form action = "login/login_validation">
 
     <div class="uk-margin">
         <div class="uk-inline">
