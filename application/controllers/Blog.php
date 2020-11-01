@@ -28,7 +28,6 @@ class Blog extends CI_Controller
         $this->load->view('blog/view', $data);
     }
 
-
     public function create()
     {
         $this->load->helper('form');
