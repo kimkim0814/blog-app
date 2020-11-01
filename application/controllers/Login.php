@@ -16,6 +16,14 @@ class Login extends CI_Controller {
     $this->load->view('template/header');
     $this->load->view('login/index');
   }
-}
+  public function login(){
 
+    $this->form_validation->set_rules("email","メール","required|trim");
+    $this->form_validation->set_rules("password", "パスワード", "required|md5|trim");
+  }
+  public function login_validation(){
+    
+  }
+
+}
 ?>
