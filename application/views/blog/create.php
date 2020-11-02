@@ -14,8 +14,8 @@
             <textarea class="uk-textarea" name="description" rows="5" placeholder="Textarea"></textarea>
         </div>
 
-        <button class="uk-button uk-button-primary" type = "submit" onclick="location.href='blog/create'">投稿画面へ</button>
+     <button class="uk-button uk-button-primary" type = "submit" onclick="location.href='blog/create'">投稿画面へ</button>
 
-    <!-- <input type="submit" name="submit" value="Create blog item" /> -->
+
 </fileset>
 </form>
