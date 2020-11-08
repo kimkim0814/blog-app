@@ -1,6 +1,6 @@
-<form action = "<?= base_url(); ?>login/login_validation">
+<?php echo form_open('login/login_validation'); ?>
 
-    <div class="uk-margin">
+   <div class="uk-margin">
         <div class="uk-inline">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
             <input class="uk-input" type="text" name="email"  value="<?= $this->input->post("email")?>"> 
@@ -13,6 +13,6 @@
             <input class="uk-input" type="password" name="password">
         </div>
     </div>
-  <button type = "submit" class="uk-button uk-button-primary">Login</button>
+  <button type = "submit" class="uk-button uk-button-primary">Login</button>  
 
 </form>
