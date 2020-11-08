@@ -26,7 +26,12 @@ class Login extends CI_Controller
 		$this->load->view('template/header' );
 		$this->load->view('login/index');
 
-	}
+    }
+    
+    public function logout(){
+        $this->session->session_destroy();
+        redirect("login/index");
+    }
 
     public function login_validation()
     {
