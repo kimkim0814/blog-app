@@ -39,8 +39,7 @@ class User extends CI_Controller
         $this->load->view('user/signup');
     }
 
-    public function login_validation()
-    {
+    public function login_validation(){
         $this->form_validation->set_rules("email", "メール", "required|trim|callback_validate_credentials");
         $this->form_validation->set_rules("password", "パスワード", "required|md5|trim");
 
@@ -57,6 +56,14 @@ class User extends CI_Controller
             $this->load->view('template/header');
             $this->load->view("user/index");
         }
+    }
+
+    public function signup_validation(){
+        $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[users.email]");
+        $this->form_validation->set_rules("password", "パスワード", "required|trim");
+        $this->form_validation->set_rules("cpassword", "パスワードの確認", "required|trim|matches[password]");
+
+
     }
 
     public function validate_credentials()
