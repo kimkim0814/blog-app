@@ -33,6 +33,10 @@ class Login extends CI_Controller
         redirect("login/index");
     }
 
+    public function signup(){
+        $this->load->view('login/signup');
+    }
+
     public function login_validation()
     {
         $this->form_validation->set_rules("email", "メール", "required|trim|callback_validate_credentials");
