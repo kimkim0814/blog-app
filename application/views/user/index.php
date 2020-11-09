@@ -1,4 +1,4 @@
-<?php echo form_open('login/login_validation'); ?>
+<?php echo form_open('user/login_validation'); ?>
 
    <div class="uk-margin">
         <div class="uk-inline">

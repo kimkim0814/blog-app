@@ -25,7 +25,7 @@ class Blog extends CI_Controller
 
 
         } else {									//ログインしていない場合の処理
-            redirect("login/index");
+            redirect("user/index");
         }
 
         

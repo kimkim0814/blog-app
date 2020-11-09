@@ -1,6 +1,6 @@
 <?php
 
-class Login extends CI_Controller
+class User extends CI_Controller
 {
     public function __construct()
     {
@@ -24,17 +24,19 @@ class Login extends CI_Controller
 	{
 
 		$this->load->view('template/header' );
-		$this->load->view('login/index');
+		$this->load->view('user/index');
 
     }
     
     public function logout(){
         $this->session->session_destroy();
-        redirect("login/index");
+        redirect("user/index");
     }
 
     public function signup(){
-        $this->load->view('login/signup');
+        $this->load->view('template/header');
+
+        $this->load->view('user/signup');
     }
 
     public function login_validation()
@@ -53,7 +55,7 @@ class Login extends CI_Controller
         } else {
             echo "<script>alert('正しいメールアドレスとパスワードを入力してください')</script>";
             $this->load->view('template/header');
-            $this->load->view("login/index");
+            $this->load->view("user/index");
         }
     }
 

@@ -1,4 +1,5 @@
-<form>
+<?php echo form_open('user/signup_formvalidation'); ?>
+
 
     <div class="uk-margin">
         <div class="uk-inline">
@@ -13,6 +14,6 @@
             <input class="uk-input" type="text">
         </div>
     </div>
-
+<button type = "submit" class="uk-button uk-button-primary">Login</button>  
 
 </form>
