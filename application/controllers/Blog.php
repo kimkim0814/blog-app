@@ -17,14 +17,20 @@ class Blog extends CI_Controller
     public function index()
     {
         $data['blog'] = $this->blog_model->get_blog();
-        $this->load->view('template/header');
+        
+        $data['header'] = $this->load->view('templates/header', $data, true);
+        $data['navigation'] = $this->load->view('templates/navigation', $data, true);
+        $data['footer'] = $this->load->view('templates/footer', $data, true);
         $this->load->view('blog/index', $data);
     }
 
     public function view($id = null)
     {
         $data['blog_item'] = $this->blog_model->get_blog($id);
-        $this->load->view('template/header');
+
+        $data['header'] = $this->load->view('templates/header', $data, true);
+        $data['navigation'] = $this->load->view('templates/navigation', $data, true);
+        $data['footer'] = $this->load->view('templates/footer', $data, true);
         $this->load->view('blog/view', $data);
     }
 
@@ -37,7 +43,7 @@ class Blog extends CI_Controller
         $this->form_validation->set_rules('description', 'description', 'required');
 
         if ($this->form_validation->run() === false) {
-            $this->load->view('template/header');
+            $this->load->view('templates/header');
             $this->load->view('blog/create');
         } else {
             $this->blog_model->set_blog();
