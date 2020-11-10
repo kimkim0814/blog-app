@@ -18,7 +18,7 @@
                 <a href="<?= base_url() ?>user/logout" uk-icon="sign-out">LOGOUT</a>
                 <a href="<?= base_url() ?>user/signup" uk-icon="user">SIGNUP</a>
             </div>
-
+aa
 
         </div>
     </nav>
