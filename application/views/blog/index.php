@@ -1,3 +1,5 @@
+<?php print_r($this->session->all_userdata());?>
+
 <?php foreach ($blog as $blog_item): ?>
 <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light" style="margin-bottom:10px; width:400px; ">
         <h3><?php echo $blog_item['title']; ?></h3>
@@ -5,7 +7,7 @@
                 <?php echo $blog_item['description']; ?>
                 <?php echo $blog_item['created_at']; ?>
         </div>
-        <p><a href="<?php echo site_url('blog/'.$blog_item['id']); ?>">View article</a></p>
+        <p><a href="<?php echo site_url('blog/'.'view/'.$blog_item['id']); ?>">View article</a></p>
 </div>
 <?php endforeach; ?>
 

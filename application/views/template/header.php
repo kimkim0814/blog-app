@@ -1,17 +1,34 @@
 <html>
+
 <head>
     <title>BLOG-APP</title>
-    <link rel="stylesheet" href="<?= base_url() ?>css/uikit.min.css" type= "text/css">
-    <link rel="stylesheet" href="<?= base_url() ?>css/blog.css" type= "text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/blog.css"
+        type="text/css">
 </head>
+
 <body>
-        <div>
-        <h1 class="uk-heading-divider" ><a href= "<?=base_url();?>" style = "text-decoration: none; color:black;">初めてのブログサイト</a></h1>
-</div>
-   
+
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+        <div class="uk-navbar-left">
+
+            <a class="uk-navbar-item uk-logo"
+                href="<?= base_url() ?>">BLOG-APP</a>
+            <div class="user_login" style = "float:right;">
+                <a href="<?= base_url() ?>user/logout" uk-icon="sign-out">LOGOUT</a>
+                <a href="<?= base_url() ?>user/signup" uk-icon="user">SIGNUP</a>
+            </div>
+aa
+
+        </div>
+    </nav>
+
+
+
 
     <script src="<?= base_url() ?>js/uikit.min.js"></script>
     <script src="<?= base_url() ?>js/uikit-icons.min.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
 </body>
+
 </html>
