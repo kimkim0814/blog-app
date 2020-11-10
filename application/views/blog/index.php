@@ -14,9 +14,8 @@
                     <h3 class="uk-card-title uk-margin-remove-bottom">
                         <?= $blog_item['title']; ?>
                     </h3>
-                    <p><?php echo $blog_item['description']; ?></p>
-                    <
-                        <?php echo $blog_item['created_at']; ?>
+                    <?php echo $blog_item['description']; ?>
+                    <?php echo $blog_item['created_at']; ?>
                     <p><a href="<?php echo site_url('blog/'.$blog_item['id']); ?>">View article</a></p>
                 </div>
             <?php endforeach; ?>

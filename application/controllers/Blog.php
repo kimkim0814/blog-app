@@ -15,15 +15,16 @@ class Blog extends CI_Controller
         //モデル
         $this->load->model('blog_model');
     }
+
     public function index()
     {
         $data['hoge'] = $this->session->userdata('hoge');
         $data['blog'] = $this->blog_model->get_blog();
 
         if ($this->session->userdata("is_logged_in")) {	//ログインしている場合の処理
-            $data['header'] = $this->load->view('templates/header', $data, true);
-            $data['navigation'] = $this->load->view('templates/navigation', $data, true);
-            $data['footer'] = $this->load->view('templates/footer', $data, true);
+            $data['header'] = $this->load->view('templates/header', null, true);
+            $data['navigation'] = $this->load->view('templates/navigation', null, true);
+            $data['footer'] = $this->load->view('templates/footer', null, true);
             $this->load->view('blog/index', $data);
         } else {									//ログインしていない場合の処理
             redirect("user/index");
