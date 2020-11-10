@@ -10,6 +10,7 @@ class Blog extends CI_Controller
         $this->load->helper('form');
         //ライブラリー
         $this->load->library('form_validation');
+
         $this->load->library('session');
         //モデル
         $this->load->model('blog_model');
@@ -47,6 +48,7 @@ class Blog extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'description', 'required');
+
 
         if ($this->form_validation->run() === false) {
             $this->load->view('template/header');
