@@ -10,18 +10,24 @@ class Blog extends CI_Controller
         $this->load->helper('form');
         //ライブラリー
         $this->load->library('form_validation');
+
+        $this->load->library('session');
         //モデル
         $this->load->model('blog_model');
     }
-
     public function index()
     {
+        $data['hoge'] = $this->session->userdata('hoge');
         $data['blog'] = $this->blog_model->get_blog();
-        
-        $data['header'] = $this->load->view('templates/header', $data, true);
-        $data['navigation'] = $this->load->view('templates/navigation', $data, true);
-        $data['footer'] = $this->load->view('templates/footer', $data, true);
-        $this->load->view('blog/index', $data);
+
+        if ($this->session->userdata("is_logged_in")) {	//ログインしている場合の処理
+            $data['header'] = $this->load->view('templates/header', $data, true);
+            $data['navigation'] = $this->load->view('templates/navigation', $data, true);
+            $data['footer'] = $this->load->view('templates/footer', $data, true);
+            $this->load->view('blog/index', $data);
+        } else {									//ログインしていない場合の処理
+            redirect("user/index");
+        }
     }
 
     public function view($id = null)
@@ -34,6 +40,7 @@ class Blog extends CI_Controller
         $this->load->view('blog/view', $data);
     }
 
+
     public function create()
     {
         $this->load->helper('form');
@@ -41,6 +48,7 @@ class Blog extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'description', 'required');
+
 
         if ($this->form_validation->run() === false) {
             $this->load->view('templates/header');
