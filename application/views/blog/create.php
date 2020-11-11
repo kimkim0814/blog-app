@@ -11,9 +11,9 @@
         <div class="field">
                 <label class="label">詳細</label>
                 <div class="control">
-                        <textarea class="textarea"  name = "description" placeholder="description"></textarea>
+                        <textarea class="textarea" name="description" placeholder="description"></textarea>
                 </div>
         </div>
         <button class="button is-link" type="submit" onclick="location.href='blog/create'">投稿画面へ</button>
-        </div>
-        </form>
+</div>
+</form>

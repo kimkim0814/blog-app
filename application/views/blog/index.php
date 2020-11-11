@@ -6,9 +6,6 @@
 <body>
 
     <?= $navigation ?>
-
-
-
         <?php foreach ($blog as $blog_item): ?>
         <div class="card" style="width:300px;margin-top:30px;">
             <header class="card-header">
@@ -29,7 +26,7 @@
                 </div>
             </div>
             <footer class="card-footer">
-                <a href="<?= site_url('blog/'.$blog_item['id'])?>" class="card-footer-item">詳細</a>
+                <a href="<?= base_url().'blog/view/'.$blog_item['id']?>" class="card-footer-item">詳細</a>
                 <a href="#" class="card-footer-item">Edit</a>
                 <a href="#" class="card-footer-item">Delete</a>
             </footer>
