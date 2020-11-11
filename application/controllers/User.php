@@ -37,6 +37,7 @@ class User extends CI_Controller
 
     public function signup(){
         $this->load->view('templates/header');
+        $this->load->view('templates/navigation');
 
         $this->load->view('user/signup');
     }
