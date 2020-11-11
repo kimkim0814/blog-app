@@ -53,6 +53,8 @@ class Blog extends CI_Controller
 
         if ($this->form_validation->run() === false) {
             $this->load->view('templates/header');
+            $this->load->view('templates/navigation');
+
             $this->load->view('blog/create');
         } else {
             $this->blog_model->set_blog();

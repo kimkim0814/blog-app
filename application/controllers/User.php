@@ -23,7 +23,9 @@ class User extends CI_Controller
 	public function login()
 	{
 
-		$this->load->view('template/header' );
+        $this->load->view('templates/header' );
+        $this->load->view('templates/navigation');
+
 		$this->load->view('user/index');
 
     }
@@ -34,7 +36,8 @@ class User extends CI_Controller
     }
 
     public function signup(){
-        $this->load->view('template/header');
+        $this->load->view('templates/header');
+        $this->load->view('templates/navigation');
 
         $this->load->view('user/signup');
     }
@@ -53,7 +56,8 @@ class User extends CI_Controller
             redirect("blog/index");
         } else {
             echo "<script>alert('正しいメールアドレスとパスワードを入力してください')</script>";
-            $this->load->view('template/header');
+            $this->load->view('templates/header');
+            $this->load->view('templates/navigation');
             $this->load->view("user/index");
         }
     }

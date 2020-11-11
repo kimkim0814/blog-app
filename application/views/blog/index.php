@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-    <?= $header ?>
+<?= $header ?>
 
-    <body>
+<body>
 
-        <?= $navigation ?>
-
-        <div class="uk-container uk-container-small uk-margin-top uk-margin-bottom">
-
-            <?php foreach ($blog as $blog_item): ?>
-                <div class="uk-card uk-card-default uk-card-small uk-card-body uk-margin-bottom">
-                    <h3 class="uk-card-title uk-margin-remove-bottom">
-                        <?= $blog_item['title']; ?>
-                    </h3>
-                    <?php echo $blog_item['description']; ?>
-                    <?php echo $blog_item['created_at']; ?>
-                    <p><a href="<?php echo site_url('blog/'.$blog_item['id']); ?>">View article</a></p>
+    <?= $navigation ?>
+        <?php foreach ($blog as $blog_item): ?>
+        <div class="card" style="width:300px;margin-top:30px;">
+            <header class="card-header">
+                <p class="card-header-title">
+                     <?= $blog_item['title']; ?>
+                </p>
+                <a href="#" class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </header>
+            <div class="card-content" style= "height:130px;">
+                <div class="content">
+                   <?php echo $blog_item['description']; ?>
+                    <br>
+                    <time datetime="<?= $blog_item['created_at']?>">11:09 PM - 1 Jan 2016</time>
                 </div>
-            <?php endforeach; ?>
-
+            </div>
+            <footer class="card-footer">
+                <a href="<?= base_url().'blog/view/'.$blog_item['id']?>" class="card-footer-item">詳細</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
         </div>
+        <?php endforeach; ?>
 
-        <?= $footer ?>
 
-    </body>
+
+    <?= $footer ?>
+
+</body>
+
 </html>
