@@ -15,5 +15,5 @@
                 </div>
         </div>
         <button class="button is-link" type="submit" onclick="location.href='blog/create'">投稿画面へ</button>
-        </fileset>
+        </div>
         </form>

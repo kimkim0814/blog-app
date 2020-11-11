@@ -1,18 +1,19 @@
 <?php echo form_open('user/login_validation'); ?>
 
-   <div class="uk-margin">
-        <div class="uk-inline">
-            <span class="uk-form-icon" uk-icon="icon: user"></span>
-            <input class="uk-input" type="text" name="email"  value="<?= $this->input->post("email")?>"> 
+<div style="width:400px;">
+        <div class="field">
+                <label class="label">E-mail</label>
+                <div class="control">
+                        <input class="input" type="text" name="email" placeholder="input email">
+                </div>
         </div>
-    </div>
-
-    <div class="uk-margin">
-        <div class="uk-inline">
-            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-            <input class="uk-input" type="password" name="password">
+       <div class="field">
+                <label class="label">パスワード</label>
+                <div class="control">
+                        <input class="input" type="password" name="password" placeholder="password">
+                </div>
         </div>
-    </div>
-  <button type = "submit" class="uk-button uk-button-primary">Login</button>  
+        <button class="button is-link" type="submit">LOGIN</button>
+        </div>
 
 </form>

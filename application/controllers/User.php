@@ -56,6 +56,7 @@ class User extends CI_Controller
         } else {
             echo "<script>alert('正しいメールアドレスとパスワードを入力してください')</script>";
             $this->load->view('templates/header');
+            $this->load->view('templates/navigation');
             $this->load->view("user/index");
         }
     }
