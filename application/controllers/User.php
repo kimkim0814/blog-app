@@ -15,34 +15,36 @@ class User extends CI_Controller
         //モデル
         $this->load->model('user_model');
     }
+
     public function index()
-	{
-		$this->login();
-	}
+    {
+        $this->login();
+    }
 
-	public function login()
-	{
-
-        $this->load->view('templates/header' );
+    public function login()
+    {
+        $this->load->view('templates/header');
         $this->load->view('templates/navigation');
 
-		$this->load->view('user/index');
-
+        $this->load->view('user/index');
     }
     
-    public function logout(){
+    public function logout()
+    {
         $this->session->session_destroy();
         redirect("user/index");
     }
 
-    public function signup(){
+    public function signup()
+    {
         $this->load->view('templates/header');
         $this->load->view('templates/navigation');
 
         $this->load->view('user/signup');
     }
 
-    public function login_validation(){
+    public function login_validation()
+    {
         $this->form_validation->set_rules("email", "メール", "required|trim|callback_validate_credentials");
         $this->form_validation->set_rules("password", "パスワード", "required|md5|trim");
 
@@ -62,12 +64,11 @@ class User extends CI_Controller
         }
     }
 
-    public function signup_validation(){
+    public function signup_validation()
+    {
         $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[users.email]");
         $this->form_validation->set_rules("password", "パスワード", "required|trim");
         $this->form_validation->set_rules("cpassword", "パスワードの確認", "required|trim|matches[password]");
-
-
     }
 
     public function validate_credentials()
@@ -81,5 +82,4 @@ class User extends CI_Controller
             return false;
         }
     }
-
 }
