@@ -41,6 +41,14 @@ class Blog extends CI_Controller
         $this->load->view('blog/view', $data);
     }
 
+    public function search()
+    {
+        $params = $this->input->get();
+        
+        $data['result'] = $this->blog_model->search($params);
+        echo implode($data['result']);
+    }
+
 
     public function create()
     {
