@@ -63,9 +63,16 @@ class User extends CI_Controller
     }
 
     public function signup_validation(){
+        $this->form_validation->set_rules("email", "Email", "required|trim");
         $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[users.email]");
         $this->form_validation->set_rules("password", "パスワード", "required|trim");
         $this->form_validation->set_rules("cpassword", "パスワードの確認", "required|trim|matches[password]");
+        if ($this->form_validation->run()) {
+            echo "Success!!";
+        } else {
+            echo "You can't pass,,,";
+            $this->load->view("signup");
+        }
 
 
     }
