@@ -69,6 +69,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules("cpassword", "パスワードの確認", "required|trim|matches[password]");
         if ($this->form_validation->run()) {
             echo "Success!!";
+            $this->user_model->add_users();
         } else {
             echo "You can't pass,,,";
             $this->load->view("signup");
