@@ -26,8 +26,12 @@ class Blog extends CI_Controller
             $data['navigation'] = $this->load->view('templates/navigation', null, true);
             $data['footer'] = $this->load->view('templates/footer', null, true);
             $this->load->view('blog/index', $data);
-        } else {									//ログインしていない場合の処理
-            redirect("user/index");
+        } else {									//ログインしていない場合の処理 
+            $this->load->view('templates/header');
+            echo "<script>alert('ログインか新規登録をしてください')</script>";
+            $this->load->view('templates/navigation');
+            $this->load->view('user/index');
+
         }
     }
 

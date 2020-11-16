@@ -14,6 +14,8 @@ class User extends CI_Controller
 
         //モデル
         $this->load->model('user_model');
+         $this->load->model('blog_model');
+
     }
     public function index()
 	{
@@ -26,19 +28,18 @@ class User extends CI_Controller
         $this->load->view('templates/header' );
         $this->load->view('templates/navigation');
 
-		$this->load->view('user/index');
+        $this->load->view('user/index');
 
     }
     
     public function logout(){
-        $this->session->session_destroy();
+        $this->session->sess_destroy();
         redirect("user/index");
     }
 
     public function signup(){
         $this->load->view('templates/header');
         $this->load->view('templates/navigation');
-
         $this->load->view('user/signup');
     }
 
@@ -63,9 +64,24 @@ class User extends CI_Controller
     }
 
     public function signup_validation(){
-        $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[users.email]");
+        $this->form_validation->set_rules("name", "Name", "required|trim");
+        $this->form_validation->set_rules("email", "Email", "required|trim|valid_email|is_unique[user.email]");
         $this->form_validation->set_rules("password", "パスワード", "required|trim");
         $this->form_validation->set_rules("cpassword", "パスワードの確認", "required|trim|matches[password]");
+        if ($this->form_validation->run()) {
+            $this->user_model->add_users();
+                $data = array(
+                "email" => $this->input->post("email"),
+                "is_logged_in" => 1
+            );
+            $this->session->set_userdata($data);
+            redirect("blog/index");
+
+
+        } else {
+            redirect("user/signup");
+
+        }
 
 
     }
