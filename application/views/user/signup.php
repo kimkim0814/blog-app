@@ -5,7 +5,7 @@
         <div class="field">
                 <label class="label">NAME</label>
                 <div class="control">
-                        <input class="input" type="text" name="NAME" placeholder="input NAME">
+                        <input class="input" type="text" name="name" placeholder="input name">
                 </div>
         </div>
         <div class="field">
