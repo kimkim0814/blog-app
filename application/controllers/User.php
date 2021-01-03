@@ -5,9 +5,11 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
         //ヘルパー
         $this->load->helper('url');
         $this->load->helper('form');
+
         //ライブラリー
         $this->load->library('form_validation');
         $this->load->library('session');
@@ -49,10 +51,10 @@ class User extends CI_Controller
         $this->form_validation->set_rules("password", "パスワード", "required|md5|trim");
 
         if ($this->form_validation->run()) {
-            $data = array(
-            "email" => $this->input->post("email"),
-            "is_logged_in" => 1
-          );
+            $data = [
+                "email" => $this->input->post("email"),
+                "is_logged_in" => 1
+            ];
             $this->session->set_userdata($data);
 
             redirect("blog/index");

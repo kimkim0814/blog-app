@@ -33,8 +33,6 @@
         </div>
         <?php endforeach; ?>
 
-
-
     <?= $footer ?>
 
 </body>

@@ -1,6 +1,7 @@
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('blog/create'); ?>
+
 <div style="width:400px;">
         <div class="field">
                 <label class="label">タイトル</label>
