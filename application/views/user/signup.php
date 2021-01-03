@@ -1,7 +1,13 @@
-<?php echo form_open('user/signup_formvalidation'); ?>
-
+<?php echo form_open('user/signup_validation'); ?>
 
 <div style="width:400px;">
+    <div class="field">
+        <label class="label">NAME</label>
+        <div class="control">
+            <input class="input" type="text" name="name" placeholder="input name">
+        </div>
+    </div>
+
     <div class="field">
         <label class="label">E-mail</label>
         <div class="control">
@@ -24,5 +30,5 @@
     </div>
 
     <button class="button is-link" type="submit">LOGIN</button>
-    </div>
+</div>
 </form>
